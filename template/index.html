@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <title>🧠 Knowledge Assistant</title>
+      <style>
+      body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #e0f7fa, #fff);
+            padding: 0;
+            margin: 0;
+      }
+      .container {
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #ffffffee;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            text-align: center;
+      }
+      h1 {
+            color: #00796b;
+            margin-bottom: 10px;
+      }
+      form {
+            margin-top: 20px;
+      }
+      input[type="text"] {
+            width: 80%;
+            padding: 14px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+      }
+      input[type="submit"] {
+            padding: 14px 24px;
+            border-radius: 10px;
+            border: none;
+            background-color: #00796b;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+      }
+      input[type="submit"]:hover {
+            background-color: #004d40;
+      }
+      .response {
+            margin-top: 30px;
+            text-align: left;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid #00796b;
+            border-radius: 10px;
+            font-size: 16px;
+            white-space: pre-wrap;
+      }
+      </style>
+</head>
+<body>
+      <div class="container">
+      <h1>🧠 Knowledge Assistant</h1>
+      <p>Ask me anything research-oriented, and I’ll analyze it for you.</p>
+      <form method="POST" action="/ask">
+            <input type="text" name="query" placeholder="Enter your question..." required>
+            <br>
+            <input type="submit" value="Get Answer">
+      </form>
+
+      {% if response %}
+      <div class="response">
+            <strong>Query:</strong> {{ query }}<br><br>
+            <strong>Response:</strong><br>
+            {{ response }}
+      </div>
+      {% endif %}
+      </div>
+</body>
+</html>
