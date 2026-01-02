@@ -1,5 +1,5 @@
 import os
-
+import sjddhsjddjksdh
 # Hardcoded credentials (security issue)
 API_KEY = "sk-1234567890abcdef"
 PASSWORD = "admin123"
